@@ -6,8 +6,21 @@
 ```html
 <script src="dist/ring.js"></script>
 ```
+# 文件说明
+```
+HKChart/
+├── dist/ 源码文件
+│   ├── ring.js 圆环图
+│   └── ...
+└── example/ 示例文件
+    └── chart
+        └──pie
+           └──ring.html
+```
+
 # API
 ## ring
+圆环插件
 ```javaScript
 new HKChart("#demo", {
   //设置图标宽度 不设置则根据父元素宽度自适应

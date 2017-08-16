@@ -1,12 +1,12 @@
 # HKChart
 中创华科图表插件
 
-#引入
+# 引入
 将需要的功能从dist文件夹引入即可，例如
 ```html
 <script src="dist/ring.js"></script>
 ```
-#API
+# API
 ## ring
 ```javaScript
 new HKChart("#demo", {

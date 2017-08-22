@@ -25,13 +25,23 @@
         return __Activision_blizzard__.d(getter, "a", getter), getter;
     }, __Activision_blizzard__.o = function(object, property) {
         return Object.prototype.hasOwnProperty.call(object, property);
-    }, __Activision_blizzard__.p = "", __Activision_blizzard__(__Activision_blizzard__.s = 41);
-}([ function(chunk, pear) {
+    }, __Activision_blizzard__.p = "", __Activision_blizzard__(__Activision_blizzard__.s = 30);
+}([ function(chunk, pear, __Activision_blizzard__) {
+    var store = __Activision_blizzard__(24)("wks"), uid = __Activision_blizzard__(25), Symbol = __Activision_blizzard__(1).Symbol, USE_SYMBOL = "function" == typeof Symbol;
+    (chunk.pear = function(name) {
+        return store[name] || (store[name] = USE_SYMBOL && Symbol[name] || (USE_SYMBOL ? Symbol : uid)("Symbol." + name));
+    }).store = store;
+}, function(chunk, pear) {
     var global = chunk.pear = "undefined" != typeof window && window.Math == Math ? window : "undefined" != typeof self && self.Math == Math ? self : Function("return this")();
     "number" == typeof __g && (__g = global);
+}, function(chunk, pear) {
+    var core = chunk.pear = {
+        version: "2.5.0"
+    };
+    "number" == typeof __e && (__e = core);
 }, function(chunk, pear, __Activision_blizzard__) {
-    var anObject = __Activision_blizzard__(11), IE8_DOM_DEFINE = __Activision_blizzard__(28), toPrimitive = __Activision_blizzard__(16), dP = Object.defineProperty;
-    pear.f = __Activision_blizzard__(2) ? Object.defineProperty : function(O, P, Attributes) {
+    var anObject = __Activision_blizzard__(7), IE8_DOM_DEFINE = __Activision_blizzard__(38), toPrimitive = __Activision_blizzard__(39), dP = Object.defineProperty;
+    pear.f = __Activision_blizzard__(4) ? Object.defineProperty : function(O, P, Attributes) {
         if (anObject(O), P = toPrimitive(P, !0), anObject(Attributes), IE8_DOM_DEFINE) try {
             return dP(O, P, Attributes);
         } catch (e) {}
@@ -39,55 +49,15 @@
         return "value" in Attributes && (O[P] = Attributes.value), O;
     };
 }, function(chunk, pear, __Activision_blizzard__) {
-    chunk.pear = !__Activision_blizzard__(8)(function() {
+    chunk.pear = !__Activision_blizzard__(12)(function() {
         return 7 != Object.defineProperty({}, "a", {
             get: function() {
                 return 7;
             }
         }).a;
     });
-}, function(chunk, pear) {
-    var hasOwnProperty = {}.hasOwnProperty;
-    chunk.pear = function(it, key) {
-        return hasOwnProperty.call(it, key);
-    };
 }, function(chunk, pear, __Activision_blizzard__) {
-    var IObject = __Activision_blizzard__(31), defined = __Activision_blizzard__(17);
-    chunk.pear = function(it) {
-        return IObject(defined(it));
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    var dP = __Activision_blizzard__(1), createDesc = __Activision_blizzard__(13);
-    chunk.pear = __Activision_blizzard__(2) ? function(object, key, value) {
-        return dP.f(object, key, createDesc(1, value));
-    } : function(object, key, value) {
-        return object[key] = value, object;
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    var store = __Activision_blizzard__(20)("wks"), uid = __Activision_blizzard__(14), Symbol = __Activision_blizzard__(0).Symbol, USE_SYMBOL = "function" == typeof Symbol;
-    (chunk.pear = function(name) {
-        return store[name] || (store[name] = USE_SYMBOL && Symbol[name] || (USE_SYMBOL ? Symbol : uid)("Symbol." + name));
-    }).store = store;
-}, function(chunk, pear) {
-    var core = chunk.pear = {
-        version: "2.5.0"
-    };
-    "number" == typeof __e && (__e = core);
-}, function(chunk, pear) {
-    chunk.pear = function(exec) {
-        try {
-            return !!exec();
-        } catch (e) {
-            return !0;
-        }
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    var $keys = __Activision_blizzard__(30), enumBugKeys = __Activision_blizzard__(21);
-    chunk.pear = Object.keys || function(O) {
-        return $keys(O, enumBugKeys);
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    var global = __Activision_blizzard__(0), core = __Activision_blizzard__(7), ctx = __Activision_blizzard__(46), hide = __Activision_blizzard__(5), $export = function(type, name, source) {
+    var global = __Activision_blizzard__(1), core = __Activision_blizzard__(2), ctx = __Activision_blizzard__(17), hide = __Activision_blizzard__(6), $export = function(type, name, source) {
         var key, own, out, IS_FORCED = type & $export.F, IS_GLOBAL = type & $export.G, IS_STATIC = type & $export.S, IS_PROTO = type & $export.P, IS_BIND = type & $export.B, IS_WRAP = type & $export.W, pear = IS_GLOBAL ? core : core[name] || (core[name] = {}), expProto = pear.prototype, target = IS_GLOBAL ? global : IS_STATIC ? global[name] : (global[name] || {}).prototype;
         IS_GLOBAL && (source = name);
         for (key in source) (own = !IS_FORCED && target && void 0 !== target[key]) && key in pear || (out = own ? target[key] : source[key], 
@@ -115,14 +85,44 @@
     $export.F = 1, $export.G = 2, $export.S = 4, $export.P = 8, $export.B = 16, $export.W = 32, 
     $export.U = 64, $export.R = 128, chunk.pear = $export;
 }, function(chunk, pear, __Activision_blizzard__) {
-    var isObject = __Activision_blizzard__(12);
+    var dP = __Activision_blizzard__(3), createDesc = __Activision_blizzard__(13);
+    chunk.pear = __Activision_blizzard__(4) ? function(object, key, value) {
+        return dP.f(object, key, createDesc(1, value));
+    } : function(object, key, value) {
+        return object[key] = value, object;
+    };
+}, function(chunk, pear, __Activision_blizzard__) {
+    var isObject = __Activision_blizzard__(11);
     chunk.pear = function(it) {
         if (!isObject(it)) throw TypeError(it + " is not an object!");
         return it;
     };
 }, function(chunk, pear) {
+    var hasOwnProperty = {}.hasOwnProperty;
+    chunk.pear = function(it, key) {
+        return hasOwnProperty.call(it, key);
+    };
+}, function(chunk, pear) {
+    var ceil = Math.ceil, floor = Math.floor;
+    chunk.pear = function(it) {
+        return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
+    };
+}, function(chunk, pear) {
+    chunk.pear = function(it) {
+        if (void 0 == it) throw TypeError("Can't call method on  " + it);
+        return it;
+    };
+}, function(chunk, pear) {
     chunk.pear = function(it) {
         return "object" === typeof it ? null !== it : "function" === typeof it;
+    };
+}, function(chunk, pear) {
+    chunk.pear = function(exec) {
+        try {
+            return !!exec();
+        } catch (e) {
+            return !0;
+        }
     };
 }, function(chunk, pear) {
     chunk.pear = function(bitmap, value) {
@@ -134,91 +134,58 @@
         };
     };
 }, function(chunk, pear) {
-    var id = 0, px = Math.random();
-    chunk.pear = function(key) {
-        return "Symbol(".concat(void 0 === key ? "" : key, ")_", (++id + px).toString(36));
-    };
-}, function(chunk, pear) {
-    pear.f = {}.propertyIsEnumerable;
+    chunk.pear = {};
 }, function(chunk, pear, __Activision_blizzard__) {
-    var isObject = __Activision_blizzard__(12);
-    chunk.pear = function(it, S) {
-        if (!isObject(it)) return it;
-        var fn, val;
-        if (S && "function" == typeof (fn = it.toString) && !isObject(val = fn.call(it))) return val;
-        if ("function" == typeof (fn = it.valueOf) && !isObject(val = fn.call(it))) return val;
-        if (!S && "function" == typeof (fn = it.toString) && !isObject(val = fn.call(it))) return val;
-        throw TypeError("Can't convert object to primitive value");
-    };
-}, function(chunk, pear) {
-    chunk.pear = function(it) {
-        if (void 0 == it) throw TypeError("Can't call method on  " + it);
-        return it;
-    };
-}, function(chunk, pear) {
-    var ceil = Math.ceil, floor = Math.floor;
-    chunk.pear = function(it) {
-        return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    var shared = __Activision_blizzard__(20)("keys"), uid = __Activision_blizzard__(14);
+    var shared = __Activision_blizzard__(24)("keys"), uid = __Activision_blizzard__(25);
     chunk.pear = function(key) {
         return shared[key] || (shared[key] = uid(key));
     };
 }, function(chunk, pear, __Activision_blizzard__) {
-    var global = __Activision_blizzard__(0), store = global["__core-js_shared__"] || (global["__core-js_shared__"] = {});
-    chunk.pear = function(key) {
-        return store[key] || (store[key] = {});
-    };
-}, function(chunk, pear) {
-    chunk.pear = "constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf".split(",");
-}, function(chunk, pear) {
-    pear.f = Object.getOwnPropertySymbols;
-}, function(chunk, pear) {
-    chunk.pear = !0;
-}, function(chunk, pear) {
-    chunk.pear = {};
-}, function(chunk, pear, __Activision_blizzard__) {
-    var def = __Activision_blizzard__(1).f, has = __Activision_blizzard__(3), TAG = __Activision_blizzard__(6)("toStringTag");
-    chunk.pear = function(it, tag, stat) {
-        it && !has(it = stat ? it : it.prototype, TAG) && def(it, TAG, {
-            configurable: !0,
-            value: tag
-        });
+    var defined = __Activision_blizzard__(10);
+    chunk.pear = function(it) {
+        return Object(defined(it));
     };
 }, function(chunk, pear, __Activision_blizzard__) {
-    pear.f = __Activision_blizzard__(6);
-}, function(chunk, pear, __Activision_blizzard__) {
-    var global = __Activision_blizzard__(0), core = __Activision_blizzard__(7), LIBRARY = __Activision_blizzard__(23), wksExt = __Activision_blizzard__(26), defineProperty = __Activision_blizzard__(1).f;
-    chunk.pear = function(name) {
-        var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
-        "_" == name.charAt(0) || name in $Symbol || defineProperty($Symbol, name, {
-            value: wksExt.f(name)
-        });
+    var aFunction = __Activision_blizzard__(37);
+    chunk.pear = function(fn, that, length) {
+        if (aFunction(fn), void 0 === that) return fn;
+        switch (length) {
+          case 1:
+            return function(a) {
+                return fn.call(that, a);
+            };
+
+          case 2:
+            return function(a, b) {
+                return fn.call(that, a, b);
+            };
+
+          case 3:
+            return function(a, b, c) {
+                return fn.call(that, a, b, c);
+            };
+        }
+        return function() {
+            return fn.apply(that, arguments);
+        };
     };
 }, function(chunk, pear, __Activision_blizzard__) {
-    chunk.pear = !__Activision_blizzard__(2) && !__Activision_blizzard__(8)(function() {
-        return 7 != Object.defineProperty(__Activision_blizzard__(29)("div"), "a", {
-            get: function() {
-                return 7;
-            }
-        }).a;
-    });
-}, function(chunk, pear, __Activision_blizzard__) {
-    var isObject = __Activision_blizzard__(12), document = __Activision_blizzard__(0).document, is = isObject(document) && isObject(document.createElement);
+    var isObject = __Activision_blizzard__(11), document = __Activision_blizzard__(1).document, is = isObject(document) && isObject(document.createElement);
     chunk.pear = function(it) {
         return is ? document.createElement(it) : {};
     };
 }, function(chunk, pear, __Activision_blizzard__) {
-    var has = __Activision_blizzard__(3), toIObject = __Activision_blizzard__(4), arrayIndexOf = __Activision_blizzard__(49)(!1), IE_PROTO = __Activision_blizzard__(19)("IE_PROTO");
-    chunk.pear = function(object, names) {
-        var key, O = toIObject(object), i = 0, result = [];
-        for (key in O) key != IE_PROTO && has(O, key) && result.push(key);
-        for (;names.length > i; ) has(O, key = names[i++]) && (~arrayIndexOf(result, key) || result.push(key));
-        return result;
+    var $keys = __Activision_blizzard__(44), enumBugKeys = __Activision_blizzard__(26);
+    chunk.pear = Object.keys || function(O) {
+        return $keys(O, enumBugKeys);
     };
 }, function(chunk, pear, __Activision_blizzard__) {
-    var cof = __Activision_blizzard__(32);
+    var IObject = __Activision_blizzard__(21), defined = __Activision_blizzard__(10);
+    chunk.pear = function(it) {
+        return IObject(defined(it));
+    };
+}, function(chunk, pear, __Activision_blizzard__) {
+    var cof = __Activision_blizzard__(22);
     chunk.pear = Object("z").propertyIsEnumerable(0) ? Object : function(it) {
         return "String" == cof(it) ? it.split("") : Object(it);
     };
@@ -228,10 +195,486 @@
         return toString.call(it).slice(8, -1);
     };
 }, function(chunk, pear, __Activision_blizzard__) {
-    var defined = __Activision_blizzard__(17);
+    var toInteger = __Activision_blizzard__(9), min = Math.min;
     chunk.pear = function(it) {
-        return Object(defined(it));
+        return it > 0 ? min(toInteger(it), 9007199254740991) : 0;
     };
+}, function(chunk, pear, __Activision_blizzard__) {
+    var global = __Activision_blizzard__(1), store = global["__core-js_shared__"] || (global["__core-js_shared__"] = {});
+    chunk.pear = function(key) {
+        return store[key] || (store[key] = {});
+    };
+}, function(chunk, pear) {
+    var id = 0, px = Math.random();
+    chunk.pear = function(key) {
+        return "Symbol(".concat(void 0 === key ? "" : key, ")_", (++id + px).toString(36));
+    };
+}, function(chunk, pear) {
+    chunk.pear = "constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf".split(",");
+}, function(chunk, pear, __Activision_blizzard__) {
+    var def = __Activision_blizzard__(3).f, has = __Activision_blizzard__(8), TAG = __Activision_blizzard__(0)("toStringTag");
+    chunk.pear = function(it, tag, stat) {
+        it && !has(it = stat ? it : it.prototype, TAG) && def(it, TAG, {
+            configurable: !0,
+            value: tag
+        });
+    };
+}, function(chunk, pear, __Activision_blizzard__) {
+    "use strict";
+    (chunk.pear = {}).forEach = function(collection, callback) {
+        for (var i = 0; i < collection.length; i++) {
+            var result = callback(collection[i]);
+            if (result) return result;
+        }
+    };
+}, function(chunk, pear, __Activision_blizzard__) {
+    "use strict";
+    var detector = chunk.pear = {};
+    detector.isIE = function(version) {
+        return !!function() {
+            var agent = navigator.userAgent.toLowerCase();
+            return -1 !== agent.indexOf("msie") || -1 !== agent.indexOf("trident") || -1 !== agent.indexOf(" edge/");
+        }() && (!version || version === function() {
+            var v = 3, div = document.createElement("div"), all = div.getElementsByTagName("i");
+            do {
+                div.innerHTML = "\x3c!--[if gt IE " + ++v + "]><i></i><![endif]--\x3e";
+            } while (all[0]);
+            return v > 4 ? v : void 0;
+        }());
+    }, detector.isLegacyOpera = function() {
+        return !!window.opera;
+    };
+}, function(chunk, pear, __Activision_blizzard__) {
+    "use strict";
+    function _interopRequireDefault(obj) {
+        return obj && obj.EP ? obj : {
+            default: obj
+        };
+    }
+    Object.defineProperty(pear, "EP", {
+        value: !0
+    });
+    var _from = __Activision_blizzard__(31), _from2 = _interopRequireDefault(_from), _extends2 = __Activision_blizzard__(56), _extends3 = _interopRequireDefault(_extends2), _classCallCheck2 = __Activision_blizzard__(63), _classCallCheck3 = _interopRequireDefault(_classCallCheck2), _createClass2 = __Activision_blizzard__(64), _createClass3 = _interopRequireDefault(_createClass2), _d = __Activision_blizzard__(68), d3 = function(obj) {
+        if (obj && obj.EP) return obj;
+        var newObj = {};
+        if (null != obj) for (var key in obj) Object.prototype.hasOwnProperty.call(obj, key) && (newObj[key] = obj[key]);
+        return newObj.default = obj, newObj;
+    }(_d), _lodash = __Activision_blizzard__(69), _lodash2 = _interopRequireDefault(_lodash), _elementResizeDetector = __Activision_blizzard__(72), _elementResizeDetector2 = _interopRequireDefault(_elementResizeDetector), erd = (0, 
+    _elementResizeDetector2.default)(), HKChart = function() {
+        function HKChart(id, obj) {
+            var _this = this;
+            (0, _classCallCheck3.default)(this, HKChart), this.props = (0, _extends3.default)({
+                bgColor: "#0c0e33",
+                bgCircle: "#232c45",
+                percent: 96,
+                space: 20
+            }, obj), this.props.txt = (0, _extends3.default)({
+                title: "PM2.5",
+                intro: "空气质量：中度污染",
+                topValue: "300",
+                AQI: 60
+            }, obj.txt), (_lodash2.default.isElement(id) ? [ id ] : document.querySelectorAll(id)).forEach(function(el) {
+                _this.resize(el);
+            });
+        }
+        return (0, _createClass3.default)(HKChart, [ {
+            key: "resize",
+            value: function(el) {
+                var _this2 = this;
+                this.props.width && (el.style.width = this.props.width + "px"), this.props.height && (el.style.height = this.props.height + "px");
+                var SS = this.props.space;
+                erd.listenTo(el, function(element) {
+                    _this2.props.width = element.offsetWidth ? element.offsetWidth : _this2.props.width, 
+                    _this2.props.height = element.offsetHeight ? element.offsetHeight : _this2.props.height, 
+                    _this2.props.radius = Math.min(_this2.props.width, _this2.props.height), _this2.rangeSpace(SS);
+                    try {
+                        el.removeChild(element.querySelector("svg"));
+                    } catch (e) {}
+                    _this2.init(el);
+                });
+            }
+        }, {
+            key: "rangeSpace",
+            value: function(SS) {
+                var radius = this.props.radius;
+                this.props.space = parseInt(SS + radius / 50);
+            }
+        }, {
+            key: "init",
+            value: function(el) {
+                var _props = this.props, width = _props.width, height = _props.height;
+                this.svg = d3.select(el).append("svg").attr("width", width).attr("height", height), 
+                this.bg(), this.ring();
+            }
+        }, {
+            key: "bg",
+            value: function() {
+                var svg = this.svg, props = this.props, width = props.width, height = props.height, bgColor = props.bgColor, bgCircle = props.bgCircle, radius = props.radius, space = props.space, bg = svg.append("g"), centerStr = width / 2 * 2 + "," + height / 2 * 2;
+                bg.append("rect").attr("width", width).attr("height", height).style("fill", bgColor), 
+                bg.append("circle").attr("cx", width / 2).attr("cy", height / 2).attr("r", this.props.radius / 2 * .7).style("fill", bgCircle);
+                var ringPath = bg.append("g").attr("transform", "scale(0.5) rotate(-180," + centerStr + ") translate(" + centerStr + ")"), defs = ringPath.append("defs"), pieData = d3.pie()((0, 
+                _from2.default)({
+                    length: 500
+                }, function(v, i) {
+                    return i;
+                })), outerRadius = radius / 2 * .66, innerRadius = radius / 2 * .66 - space;
+                this.props.innerRadius = innerRadius, outerRadius *= 2, innerRadius *= 2, space *= 2;
+                var arc = d3.arc().innerRadius(innerRadius).outerRadius(outerRadius), color = function(v) {
+                    v++;
+                    var pr = function(percent) {
+                        return 500 * percent * 1;
+                    };
+                    return d3.scaleLinear().domain([ pr(.1), pr(.5), pr(.6), pr(.7), pr(.85), pr(1) ]).range([ "#420531", "#41116c", "#d8171d", "#fe8700", "#fbd228", "#6cce05" ])(v);
+                };
+                ringPath.selectAll("g").data(pieData).enter().append("path").attr("d", function(d) {
+                    return arc(d);
+                }).style("fill", function(d) {
+                    return color(d.value);
+                }).style("stroke", function(d) {
+                    return color(d.value);
+                }).style("stroke-width", 2), ringPath.attr("filter", "url(#" + function() {
+                    var filter = defs.append("filter").attr("id", "drop-shadow");
+                    return filter.html('\n        <feGaussianBlur in="SourceAlpha" stdDeviation="11" result="blur"></feGaussianBlur>\n        <feOffset dy="2" dx="3"></feOffset>\n        <feComposite in2="SourceAlpha" operator="arithmetic" k2="-2" k3="2" result="shadowDiff"></feComposite>\n        \n         <feFlood flood-color="#000" flood-opacity=".55"></feFlood>\n         <feComposite in2="shadowDiff" operator="in"></feComposite>\n         <feComposite in2="SourceGraphic" operator="over" result="firstfilter"></feComposite>\n       \n        <feGaussianBlur in="firstfilter" stdDeviation="11" result="blur2"></feGaussianBlur>\n        <feOffset dy="-2" dx="-3"></feOffset>\n        <feComposite in2="firstfilter" operator="arithmetic" k2="-2" k3="2" result="shadowDiff"></feComposite>\n         \n         <feFlood flood-color="#000" flood-opacity=".65"></feFlood>\n        <feComposite in2="shadowDiff" operator="in"></feComposite>\n        <feComposite in2="firstfilter" operator="over"></feComposite>\n      '), 
+                    filter;
+                }().attr("id") + ")");
+            }
+        }, {
+            key: "ring",
+            value: function() {
+                var _props2 = this.props, width = _props2.width, height = _props2.height, radius = _props2.radius, innerRadius = _props2.innerRadius, txt = _props2.txt, svg = this.svg.append("g").attr("transform", "translate(" + width / 2 + "," + height / 2 + ")"), triangle = d3.symbol().type(d3.symbolTriangle), arrow = svg.append("g");
+                arrow.append("path").attr("d", triangle.size(170)).attr("fill", "#c9cacb").attr("transform", "translate(1," + (innerRadius - 5) + ")"), 
+                arrow.append("rect").attr("width", 10).attr("height", this.props.radius / 2 * .7 - innerRadius).attr("fill", "#fcfcfc").attr("transform", "translate(0," + innerRadius + ")"), 
+                arrow.append("rect").attr("width", 10).attr("height", this.props.radius / 2 * .7 - innerRadius).attr("fill", "#c9cacb").attr("transform", "translate(-9," + innerRadius + ")"), 
+                arrow.transition().attrTween("transform", function() {
+                    return function(t) {
+                        return txt.AQI = parseInt(txt.AQI, 10), svg.select("#AQI").text("AQI：" + parseInt(txt.AQI * t, 10)), 
+                        "rotate(" + t * (.72 * txt.AQI) + ")";
+                    };
+                }).duration(1e3), function() {
+                    var fontSize = 14 + radius / 100, fontSizeBig = 14 + radius / 10, text = svg.append("g");
+                    text.style("font-size", fontSize), text.append("text").attr("transform", "translate(" + (-width / 2 + fontSize) + "," + (-height / 2 + 1.5 * fontSize) + ")").text(txt.title).style("fill", "#fff"), 
+                    text.append("text").attr("transform", "translate(0," + (height / 2 - fontSize) + ")").attr("text-anchor", "middle").text(txt.intro).style("fill", "#fff"), 
+                    text.append("text").attr("text-anchor", "middle").text(txt.topValue).style("fill", "#fff").style("font-size", fontSizeBig), 
+                    text.append("text").attr("id", "AQI").attr("transform", "translate(0," + 2 * fontSize + ")").attr("text-anchor", "middle").style("fill", "#fff");
+                }();
+            }
+        } ]), HKChart;
+    }();
+    window.HKChart = HKChart, pear.default = HKChart;
+}, function(chunk, pear, __Activision_blizzard__) {
+    chunk.pear = {
+        default: __Activision_blizzard__(32),
+        EP: !0
+    };
+}, function(chunk, pear, __Activision_blizzard__) {
+    __Activision_blizzard__(33), __Activision_blizzard__(49), chunk.pear = __Activision_blizzard__(2).Array.from;
+}, function(chunk, pear, __Activision_blizzard__) {
+    "use strict";
+    var $at = __Activision_blizzard__(34)(!0);
+    __Activision_blizzard__(35)(String, "String", function(iterated) {
+        this._t = String(iterated), this._i = 0;
+    }, function() {
+        var point, O = this._t, index = this._i;
+        return index >= O.length ? {
+            value: void 0,
+            done: !0
+        } : (point = $at(O, index), this._i += point.length, {
+            value: point,
+            done: !1
+        });
+    });
+}, function(chunk, pear, __Activision_blizzard__) {
+    var toInteger = __Activision_blizzard__(9), defined = __Activision_blizzard__(10);
+    chunk.pear = function(TO_STRING) {
+        return function(that, pos) {
+            var a, b, s = String(defined(that)), i = toInteger(pos), l = s.length;
+            return i < 0 || i >= l ? TO_STRING ? "" : void 0 : (a = s.charCodeAt(i), a < 55296 || a > 56319 || i + 1 === l || (b = s.charCodeAt(i + 1)) < 56320 || b > 57343 ? TO_STRING ? s.charAt(i) : a : TO_STRING ? s.slice(i, i + 2) : b - 56320 + (a - 55296 << 10) + 65536);
+        };
+    };
+}, function(chunk, pear, __Activision_blizzard__) {
+    "use strict";
+    var LIBRARY = __Activision_blizzard__(36), $export = __Activision_blizzard__(5), redefine = __Activision_blizzard__(40), hide = __Activision_blizzard__(6), has = __Activision_blizzard__(8), Iterators = __Activision_blizzard__(14), $iterCreate = __Activision_blizzard__(41), setToStringTag = __Activision_blizzard__(27), getPrototypeOf = __Activision_blizzard__(48), ITERATOR = __Activision_blizzard__(0)("iterator"), BUGGY = !([].keys && "next" in [].keys()), returnThis = function() {
+        return this;
+    };
+    chunk.pear = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED) {
+        $iterCreate(Constructor, NAME, next);
+        var methods, key, IteratorPrototype, getMethod = function(kind) {
+            if (!BUGGY && kind in proto) return proto[kind];
+            switch (kind) {
+              case "keys":
+              case "values":
+                return function() {
+                    return new Constructor(this, kind);
+                };
+            }
+            return function() {
+                return new Constructor(this, kind);
+            };
+        }, TAG = NAME + " Iterator", DEF_VALUES = "values" == DEFAULT, VALUES_BUG = !1, proto = Base.prototype, $native = proto[ITERATOR] || proto["@@iterator"] || DEFAULT && proto[DEFAULT], $default = $native || getMethod(DEFAULT), $entries = DEFAULT ? DEF_VALUES ? getMethod("entries") : $default : void 0, $anyNative = "Array" == NAME ? proto.entries || $native : $native;
+        if ($anyNative && (IteratorPrototype = getPrototypeOf($anyNative.call(new Base()))) !== Object.prototype && IteratorPrototype.next && (setToStringTag(IteratorPrototype, TAG, !0), 
+        LIBRARY || has(IteratorPrototype, ITERATOR) || hide(IteratorPrototype, ITERATOR, returnThis)), 
+        DEF_VALUES && $native && "values" !== $native.name && (VALUES_BUG = !0, $default = function() {
+            return $native.call(this);
+        }), LIBRARY && !FORCED || !BUGGY && !VALUES_BUG && proto[ITERATOR] || hide(proto, ITERATOR, $default), 
+        Iterators[NAME] = $default, Iterators[TAG] = returnThis, DEFAULT) if (methods = {
+            values: DEF_VALUES ? $default : getMethod("values"),
+            keys: IS_SET ? $default : getMethod("keys"),
+            entries: $entries
+        }, FORCED) for (key in methods) key in proto || redefine(proto, key, methods[key]); else $export($export.P + $export.F * (BUGGY || VALUES_BUG), NAME, methods);
+        return methods;
+    };
+}, function(chunk, pear) {
+    chunk.pear = !0;
+}, function(chunk, pear) {
+    chunk.pear = function(it) {
+        if ("function" != typeof it) throw TypeError(it + " is not a function!");
+        return it;
+    };
+}, function(chunk, pear, __Activision_blizzard__) {
+    chunk.pear = !__Activision_blizzard__(4) && !__Activision_blizzard__(12)(function() {
+        return 7 != Object.defineProperty(__Activision_blizzard__(18)("div"), "a", {
+            get: function() {
+                return 7;
+            }
+        }).a;
+    });
+}, function(chunk, pear, __Activision_blizzard__) {
+    var isObject = __Activision_blizzard__(11);
+    chunk.pear = function(it, S) {
+        if (!isObject(it)) return it;
+        var fn, val;
+        if (S && "function" == typeof (fn = it.toString) && !isObject(val = fn.call(it))) return val;
+        if ("function" == typeof (fn = it.valueOf) && !isObject(val = fn.call(it))) return val;
+        if (!S && "function" == typeof (fn = it.toString) && !isObject(val = fn.call(it))) return val;
+        throw TypeError("Can't convert object to primitive value");
+    };
+}, function(chunk, pear, __Activision_blizzard__) {
+    chunk.pear = __Activision_blizzard__(6);
+}, function(chunk, pear, __Activision_blizzard__) {
+    "use strict";
+    var create = __Activision_blizzard__(42), descriptor = __Activision_blizzard__(13), setToStringTag = __Activision_blizzard__(27), IteratorPrototype = {};
+    __Activision_blizzard__(6)(IteratorPrototype, __Activision_blizzard__(0)("iterator"), function() {
+        return this;
+    }), chunk.pear = function(Constructor, NAME, next) {
+        Constructor.prototype = create(IteratorPrototype, {
+            next: descriptor(1, next)
+        }), setToStringTag(Constructor, NAME + " Iterator");
+    };
+}, function(chunk, pear, __Activision_blizzard__) {
+    var anObject = __Activision_blizzard__(7), dPs = __Activision_blizzard__(43), enumBugKeys = __Activision_blizzard__(26), IE_PROTO = __Activision_blizzard__(15)("IE_PROTO"), Empty = function() {}, createDict = function() {
+        var iframeDocument, iframe = __Activision_blizzard__(18)("iframe"), i = enumBugKeys.length;
+        for (iframe.style.display = "none", __Activision_blizzard__(47).appendChild(iframe), 
+        iframe.src = "javascript:", iframeDocument = iframe.contentWindow.document, iframeDocument.open(), 
+        iframeDocument.write("<script>document.F=Object<\/script>"), iframeDocument.close(), 
+        createDict = iframeDocument.F; i--; ) delete createDict.prototype[enumBugKeys[i]];
+        return createDict();
+    };
+    chunk.pear = Object.create || function(O, Properties) {
+        var result;
+        return null !== O ? (Empty.prototype = anObject(O), result = new Empty(), Empty.prototype = null, 
+        result[IE_PROTO] = O) : result = createDict(), void 0 === Properties ? result : dPs(result, Properties);
+    };
+}, function(chunk, pear, __Activision_blizzard__) {
+    var dP = __Activision_blizzard__(3), anObject = __Activision_blizzard__(7), getKeys = __Activision_blizzard__(19);
+    chunk.pear = __Activision_blizzard__(4) ? Object.defineProperties : function(O, Properties) {
+        anObject(O);
+        for (var P, keys = getKeys(Properties), length = keys.length, i = 0; length > i; ) dP.f(O, P = keys[i++], Properties[P]);
+        return O;
+    };
+}, function(chunk, pear, __Activision_blizzard__) {
+    var has = __Activision_blizzard__(8), toIObject = __Activision_blizzard__(20), arrayIndexOf = __Activision_blizzard__(45)(!1), IE_PROTO = __Activision_blizzard__(15)("IE_PROTO");
+    chunk.pear = function(object, names) {
+        var key, O = toIObject(object), i = 0, result = [];
+        for (key in O) key != IE_PROTO && has(O, key) && result.push(key);
+        for (;names.length > i; ) has(O, key = names[i++]) && (~arrayIndexOf(result, key) || result.push(key));
+        return result;
+    };
+}, function(chunk, pear, __Activision_blizzard__) {
+    var toIObject = __Activision_blizzard__(20), toLength = __Activision_blizzard__(23), toAbsoluteIndex = __Activision_blizzard__(46);
+    chunk.pear = function(IS_INCLUDES) {
+        return function($this, el, fromIndex) {
+            var value, O = toIObject($this), length = toLength(O.length), index = toAbsoluteIndex(fromIndex, length);
+            if (IS_INCLUDES && el != el) {
+                for (;length > index; ) if ((value = O[index++]) != value) return !0;
+            } else for (;length > index; index++) if ((IS_INCLUDES || index in O) && O[index] === el) return IS_INCLUDES || index || 0;
+            return !IS_INCLUDES && -1;
+        };
+    };
+}, function(chunk, pear, __Activision_blizzard__) {
+    var toInteger = __Activision_blizzard__(9), max = Math.max, min = Math.min;
+    chunk.pear = function(index, length) {
+        return index = toInteger(index), index < 0 ? max(index + length, 0) : min(index, length);
+    };
+}, function(chunk, pear, __Activision_blizzard__) {
+    var document = __Activision_blizzard__(1).document;
+    chunk.pear = document && document.documentElement;
+}, function(chunk, pear, __Activision_blizzard__) {
+    var has = __Activision_blizzard__(8), toObject = __Activision_blizzard__(16), IE_PROTO = __Activision_blizzard__(15)("IE_PROTO"), ObjectProto = Object.prototype;
+    chunk.pear = Object.getPrototypeOf || function(O) {
+        return O = toObject(O), has(O, IE_PROTO) ? O[IE_PROTO] : "function" == typeof O.constructor && O instanceof O.constructor ? O.constructor.prototype : O instanceof Object ? ObjectProto : null;
+    };
+}, function(chunk, pear, __Activision_blizzard__) {
+    "use strict";
+    var ctx = __Activision_blizzard__(17), $export = __Activision_blizzard__(5), toObject = __Activision_blizzard__(16), call = __Activision_blizzard__(50), isArrayIter = __Activision_blizzard__(51), toLength = __Activision_blizzard__(23), createProperty = __Activision_blizzard__(52), getIterFn = __Activision_blizzard__(53);
+    $export($export.S + $export.F * !__Activision_blizzard__(55)(function(iter) {
+        Array.from(iter);
+    }), "Array", {
+        from: function(arrayLike) {
+            var length, result, step, iterator, O = toObject(arrayLike), C = "function" == typeof this ? this : Array, aLen = arguments.length, mapfn = aLen > 1 ? arguments[1] : void 0, mapping = void 0 !== mapfn, index = 0, iterFn = getIterFn(O);
+            if (mapping && (mapfn = ctx(mapfn, aLen > 2 ? arguments[2] : void 0, 2)), void 0 == iterFn || C == Array && isArrayIter(iterFn)) for (length = toLength(O.length), 
+            result = new C(length); length > index; index++) createProperty(result, index, mapping ? mapfn(O[index], index) : O[index]); else for (iterator = iterFn.call(O), 
+            result = new C(); !(step = iterator.next()).done; index++) createProperty(result, index, mapping ? call(iterator, mapfn, [ step.value, index ], !0) : step.value);
+            return result.length = index, result;
+        }
+    });
+}, function(chunk, pear, __Activision_blizzard__) {
+    var anObject = __Activision_blizzard__(7);
+    chunk.pear = function(iterator, fn, value, entries) {
+        try {
+            return entries ? fn(anObject(value)[0], value[1]) : fn(value);
+        } catch (e) {
+            var ret = iterator.return;
+            throw void 0 !== ret && anObject(ret.call(iterator)), e;
+        }
+    };
+}, function(chunk, pear, __Activision_blizzard__) {
+    var Iterators = __Activision_blizzard__(14), ITERATOR = __Activision_blizzard__(0)("iterator"), ArrayProto = Array.prototype;
+    chunk.pear = function(it) {
+        return void 0 !== it && (Iterators.Array === it || ArrayProto[ITERATOR] === it);
+    };
+}, function(chunk, pear, __Activision_blizzard__) {
+    "use strict";
+    var $defineProperty = __Activision_blizzard__(3), createDesc = __Activision_blizzard__(13);
+    chunk.pear = function(object, index, value) {
+        index in object ? $defineProperty.f(object, index, createDesc(0, value)) : object[index] = value;
+    };
+}, function(chunk, pear, __Activision_blizzard__) {
+    var classof = __Activision_blizzard__(54), ITERATOR = __Activision_blizzard__(0)("iterator"), Iterators = __Activision_blizzard__(14);
+    chunk.pear = __Activision_blizzard__(2).getIteratorMethod = function(it) {
+        if (void 0 != it) return it[ITERATOR] || it["@@iterator"] || Iterators[classof(it)];
+    };
+}, function(chunk, pear, __Activision_blizzard__) {
+    var cof = __Activision_blizzard__(22), TAG = __Activision_blizzard__(0)("toStringTag"), ARG = "Arguments" == cof(function() {
+        return arguments;
+    }()), tryGet = function(it, key) {
+        try {
+            return it[key];
+        } catch (e) {}
+    };
+    chunk.pear = function(it) {
+        var O, T, B;
+        return void 0 === it ? "Undefined" : null === it ? "Null" : "string" == typeof (T = tryGet(O = Object(it), TAG)) ? T : ARG ? cof(O) : "Object" == (B = cof(O)) && "function" == typeof O.callee ? "Arguments" : B;
+    };
+}, function(chunk, pear, __Activision_blizzard__) {
+    var ITERATOR = __Activision_blizzard__(0)("iterator"), SAFE_CLOSING = !1;
+    try {
+        var riter = [ 7 ][ITERATOR]();
+        riter.return = function() {
+            SAFE_CLOSING = !0;
+        }, Array.from(riter, function() {
+            throw 2;
+        });
+    } catch (e) {}
+    chunk.pear = function(exec, skipClosing) {
+        if (!skipClosing && !SAFE_CLOSING) return !1;
+        var safe = !1;
+        try {
+            var arr = [ 7 ], iter = arr[ITERATOR]();
+            iter.next = function() {
+                return {
+                    done: safe = !0
+                };
+            }, arr[ITERATOR] = function() {
+                return iter;
+            }, exec(arr);
+        } catch (e) {}
+        return safe;
+    };
+}, function(chunk, pear, __Activision_blizzard__) {
+    "use strict";
+    pear.EP = !0;
+    var _assign = __Activision_blizzard__(57), _assign2 = function(obj) {
+        return obj && obj.EP ? obj : {
+            default: obj
+        };
+    }(_assign);
+    pear.default = _assign2.default || function(target) {
+        for (var i = 1; i < arguments.length; i++) {
+            var source = arguments[i];
+            for (var key in source) Object.prototype.hasOwnProperty.call(source, key) && (target[key] = source[key]);
+        }
+        return target;
+    };
+}, function(chunk, pear, __Activision_blizzard__) {
+    chunk.pear = {
+        default: __Activision_blizzard__(58),
+        EP: !0
+    };
+}, function(chunk, pear, __Activision_blizzard__) {
+    __Activision_blizzard__(59), chunk.pear = __Activision_blizzard__(2).Object.assign;
+}, function(chunk, pear, __Activision_blizzard__) {
+    var $export = __Activision_blizzard__(5);
+    $export($export.S + $export.F, "Object", {
+        assign: __Activision_blizzard__(60)
+    });
+}, function(chunk, pear, __Activision_blizzard__) {
+    "use strict";
+    var getKeys = __Activision_blizzard__(19), gOPS = __Activision_blizzard__(61), pIE = __Activision_blizzard__(62), toObject = __Activision_blizzard__(16), IObject = __Activision_blizzard__(21), $assign = Object.assign;
+    chunk.pear = !$assign || __Activision_blizzard__(12)(function() {
+        var A = {}, B = {}, S = Symbol(), K = "abcdefghijklmnopqrst";
+        return A[S] = 7, K.split("").forEach(function(k) {
+            B[k] = k;
+        }), 7 != $assign({}, A)[S] || Object.keys($assign({}, B)).join("") != K;
+    }) ? function(target, source) {
+        for (var T = toObject(target), aLen = arguments.length, index = 1, getSymbols = gOPS.f, isEnum = pIE.f; aLen > index; ) for (var key, S = IObject(arguments[index++]), keys = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S), length = keys.length, j = 0; length > j; ) isEnum.call(S, key = keys[j++]) && (T[key] = S[key]);
+        return T;
+    } : $assign;
+}, function(chunk, pear) {
+    pear.f = Object.getOwnPropertySymbols;
+}, function(chunk, pear) {
+    pear.f = {}.propertyIsEnumerable;
+}, function(chunk, pear, __Activision_blizzard__) {
+    "use strict";
+    pear.EP = !0, pear.default = function(instance, Constructor) {
+        if (!(instance instanceof Constructor)) throw new TypeError("Cannot call a class as a function");
+    };
+}, function(chunk, pear, __Activision_blizzard__) {
+    "use strict";
+    pear.EP = !0;
+    var _defineProperty = __Activision_blizzard__(65), _defineProperty2 = function(obj) {
+        return obj && obj.EP ? obj : {
+            default: obj
+        };
+    }(_defineProperty);
+    pear.default = function() {
+        function defineProperties(target, props) {
+            for (var i = 0; i < props.length; i++) {
+                var descriptor = props[i];
+                descriptor.enumerable = descriptor.enumerable || !1, descriptor.configurable = !0, 
+                "value" in descriptor && (descriptor.writable = !0), (0, _defineProperty2.default)(target, descriptor.key, descriptor);
+            }
+        }
+        return function(Constructor, protoProps, staticProps) {
+            return protoProps && defineProperties(Constructor.prototype, protoProps), staticProps && defineProperties(Constructor, staticProps), 
+            Constructor;
+        };
+    }();
+}, function(chunk, pear, __Activision_blizzard__) {
+    chunk.pear = {
+        default: __Activision_blizzard__(66),
+        EP: !0
+    };
+}, function(chunk, pear, __Activision_blizzard__) {
+    __Activision_blizzard__(67);
+    var $Object = __Activision_blizzard__(2).Object;
+    chunk.pear = function(it, key, desc) {
+        return $Object.defineProperty(it, key, desc);
+    };
+}, function(chunk, pear, __Activision_blizzard__) {
+    var $export = __Activision_blizzard__(5);
+    $export($export.S + $export.F * !__Activision_blizzard__(4), "Object", {
+        defineProperty: __Activision_blizzard__(3).f
+    });
 }, function(chunk, pear, __Activision_blizzard__) {
     !function(global, factory) {
         factory(pear);
@@ -9167,330 +9610,6 @@
         });
     });
 }, function(chunk, pear, __Activision_blizzard__) {
-    "use strict";
-    var LIBRARY = __Activision_blizzard__(23), $export = __Activision_blizzard__(10), redefine = __Activision_blizzard__(36), hide = __Activision_blizzard__(5), has = __Activision_blizzard__(3), Iterators = __Activision_blizzard__(24), $iterCreate = __Activision_blizzard__(66), setToStringTag = __Activision_blizzard__(25), getPrototypeOf = __Activision_blizzard__(69), ITERATOR = __Activision_blizzard__(6)("iterator"), BUGGY = !([].keys && "next" in [].keys()), returnThis = function() {
-        return this;
-    };
-    chunk.pear = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED) {
-        $iterCreate(Constructor, NAME, next);
-        var methods, key, IteratorPrototype, getMethod = function(kind) {
-            if (!BUGGY && kind in proto) return proto[kind];
-            switch (kind) {
-              case "keys":
-              case "values":
-                return function() {
-                    return new Constructor(this, kind);
-                };
-            }
-            return function() {
-                return new Constructor(this, kind);
-            };
-        }, TAG = NAME + " Iterator", DEF_VALUES = "values" == DEFAULT, VALUES_BUG = !1, proto = Base.prototype, $native = proto[ITERATOR] || proto["@@iterator"] || DEFAULT && proto[DEFAULT], $default = $native || getMethod(DEFAULT), $entries = DEFAULT ? DEF_VALUES ? getMethod("entries") : $default : void 0, $anyNative = "Array" == NAME ? proto.entries || $native : $native;
-        if ($anyNative && (IteratorPrototype = getPrototypeOf($anyNative.call(new Base()))) !== Object.prototype && IteratorPrototype.next && (setToStringTag(IteratorPrototype, TAG, !0), 
-        LIBRARY || has(IteratorPrototype, ITERATOR) || hide(IteratorPrototype, ITERATOR, returnThis)), 
-        DEF_VALUES && $native && "values" !== $native.name && (VALUES_BUG = !0, $default = function() {
-            return $native.call(this);
-        }), LIBRARY && !FORCED || !BUGGY && !VALUES_BUG && proto[ITERATOR] || hide(proto, ITERATOR, $default), 
-        Iterators[NAME] = $default, Iterators[TAG] = returnThis, DEFAULT) if (methods = {
-            values: DEF_VALUES ? $default : getMethod("values"),
-            keys: IS_SET ? $default : getMethod("keys"),
-            entries: $entries
-        }, FORCED) for (key in methods) key in proto || redefine(proto, key, methods[key]); else $export($export.P + $export.F * (BUGGY || VALUES_BUG), NAME, methods);
-        return methods;
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    chunk.pear = __Activision_blizzard__(5);
-}, function(chunk, pear, __Activision_blizzard__) {
-    var anObject = __Activision_blizzard__(11), dPs = __Activision_blizzard__(67), enumBugKeys = __Activision_blizzard__(21), IE_PROTO = __Activision_blizzard__(19)("IE_PROTO"), Empty = function() {}, createDict = function() {
-        var iframeDocument, iframe = __Activision_blizzard__(29)("iframe"), i = enumBugKeys.length;
-        for (iframe.style.display = "none", __Activision_blizzard__(68).appendChild(iframe), 
-        iframe.src = "javascript:", iframeDocument = iframe.contentWindow.document, iframeDocument.open(), 
-        iframeDocument.write("<script>document.F=Object<\/script>"), iframeDocument.close(), 
-        createDict = iframeDocument.F; i--; ) delete createDict.prototype[enumBugKeys[i]];
-        return createDict();
-    };
-    chunk.pear = Object.create || function(O, Properties) {
-        var result;
-        return null !== O ? (Empty.prototype = anObject(O), result = new Empty(), Empty.prototype = null, 
-        result[IE_PROTO] = O) : result = createDict(), void 0 === Properties ? result : dPs(result, Properties);
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    var $keys = __Activision_blizzard__(30), hiddenKeys = __Activision_blizzard__(21).concat("length", "prototype");
-    pear.f = Object.getOwnPropertyNames || function(O) {
-        return $keys(O, hiddenKeys);
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    "use strict";
-    (chunk.pear = {}).forEach = function(collection, callback) {
-        for (var i = 0; i < collection.length; i++) {
-            var result = callback(collection[i]);
-            if (result) return result;
-        }
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    "use strict";
-    var detector = chunk.pear = {};
-    detector.isIE = function(version) {
-        return !!function() {
-            var agent = navigator.userAgent.toLowerCase();
-            return -1 !== agent.indexOf("msie") || -1 !== agent.indexOf("trident") || -1 !== agent.indexOf(" edge/");
-        }() && (!version || version === function() {
-            var v = 3, div = document.createElement("div"), all = div.getElementsByTagName("i");
-            do {
-                div.innerHTML = "\x3c!--[if gt IE " + ++v + "]><i></i><![endif]--\x3e";
-            } while (all[0]);
-            return v > 4 ? v : void 0;
-        }());
-    }, detector.isLegacyOpera = function() {
-        return !!window.opera;
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    "use strict";
-    function _interopRequireDefault(obj) {
-        return obj && obj.EP ? obj : {
-            default: obj
-        };
-    }
-    Object.defineProperty(pear, "EP", {
-        value: !0
-    });
-    var _extends2 = __Activision_blizzard__(42), _extends3 = _interopRequireDefault(_extends2), _classCallCheck2 = __Activision_blizzard__(52), _classCallCheck3 = _interopRequireDefault(_classCallCheck2), _createClass2 = __Activision_blizzard__(53), _createClass3 = _interopRequireDefault(_createClass2), _d = __Activision_blizzard__(34), d3 = function(obj) {
-        if (obj && obj.EP) return obj;
-        var newObj = {};
-        if (null != obj) for (var key in obj) Object.prototype.hasOwnProperty.call(obj, key) && (newObj[key] = obj[key]);
-        return newObj.default = obj, newObj;
-    }(_d), _lodash = __Activision_blizzard__(57), _elementResizeDetector = (_interopRequireDefault(_lodash), 
-    __Activision_blizzard__(60), __Activision_blizzard__(86)), _elementResizeDetector2 = _interopRequireDefault(_elementResizeDetector), erd = (0, 
-    _elementResizeDetector2.default)(), HKChart = function() {
-        function HKChart(id, obj) {
-            (0, _classCallCheck3.default)(this, HKChart), this.props = (0, _extends3.default)({
-                bgColor: "#0c0e33",
-                bgCircle: "#232c45",
-                percent: 96,
-                space: 30,
-                txt: {
-                    title: "PM2.5",
-                    intro: "空气质量：中度污染",
-                    topValue: "300",
-                    botValue: "AQI:A60"
-                }
-            }, obj), this.el = document.querySelector(id), this.resize();
-        }
-        return (0, _createClass3.default)(HKChart, [ {
-            key: "resize",
-            value: function() {
-                var _this = this;
-                this.props.width && (this.el.style.width = this.props.width + "px"), this.props.height && (this.el.style.height = this.props.height + "px"), 
-                erd.listenTo(this.el, function(element) {
-                    _this.props.width = element.offsetWidth ? element.offsetWidth : _this.props.width, 
-                    _this.props.height = element.offsetHeight ? element.offsetHeight : _this.props.height, 
-                    _this.props.radius = Math.min(_this.props.width, _this.props.height);
-                    try {
-                        _this.el.removeChild(element.querySelector("svg"));
-                    } catch (e) {}
-                    _this.init();
-                });
-            }
-        }, {
-            key: "init",
-            value: function() {
-                var _props = this.props, width = _props.width, height = _props.height;
-                this.svg = d3.select(this.el).append("svg").attr("width", width).attr("height", height), 
-                this.bg(), this.ring();
-            }
-        }, {
-            key: "bg",
-            value: function() {
-                var svg = this.svg, props = this.props, width = props.width, height = props.height, bgColor = props.bgColor, bgCircle = props.bgCircle, bg = svg.append("g");
-                bg.append("rect").attr("width", width).attr("height", height).style("fill", bgColor), 
-                bg.append("circle").attr("cx", width / 2).attr("cy", height / 2).attr("r", this.props.radius / 2 * .7).style("fill", bgCircle);
-            }
-        }, {
-            key: "ring",
-            value: function() {
-                var _props2 = this.props, width = _props2.width, height = _props2.height, radius = _props2.radius, percent = _props2.percent, space = _props2.space, txt = _props2.txt, svg = this.svg.append("g").attr("transform", "translate(" + width / 2 + "," + height / 2 + ")"), defs = svg.append("defs"), pieData = d3.pie()([ percent / 100 ]), outerRadius = radius / 2 * .66, innerRadius = radius / 2 * .66 - space, arc = d3.arc().innerRadius(innerRadius).outerRadius(outerRadius).startAngle(Math.PI).endAngle(function(d) {
-                    return Math.PI + 2 * d.value * Math.PI;
-                }), field = svg.selectAll("g").data(pieData).enter().append("g"), aw = function() {
-                    var triangle = d3.symbol().type(d3.symbolTriangle), arrow = svg.append("g");
-                    return arrow.append("path").attr("d", triangle.size(138)).attr("fill", "#fff").attr("transform", "translate(0," + (innerRadius - 5) + ")"), 
-                    arrow.append("rect").attr("width", 16).attr("height", space).attr("fill", "#fff").attr("transform", "translate(-8," + innerRadius + ")"), 
-                    arrow;
-                }();
-                field.append("path").transition().attrTween("d", function(d) {
-                    var i = d3.interpolateNumber(0, d.value);
-                    return function(t) {
-                        return d.value = i(t), aw.attr("transform", "rotate(" + 360 * d.value + ")"), svg.select("#ringValue").text(parseInt(txt.topValue / percent * d.value * 100)), 
-                        arc(d);
-                    };
-                }).duration(2e3).style("fill", "url(#" + function() {
-                    var linearGradient = defs.append("linearGradient").attr("id", "linearColor").attr("x1", "0%").attr("y1", "0%").attr("x2", "0%").attr("y2", "100%");
-                    return linearGradient.append("stop").attr("offset", "0%").style("stop-color", "#ff0000"), 
-                    linearGradient.append("stop").attr("offset", "20%").style("stop-color", "#ffff00"), 
-                    linearGradient.append("stop").attr("offset", "40%").style("stop-color", "#00ff00"), 
-                    linearGradient.append("stop").attr("offset", "60%").style("stop-color", "#00ffff"), 
-                    linearGradient.append("stop").attr("offset", "80%").style("stop-color", "#0000ff"), 
-                    linearGradient.append("stop").attr("offset", "100%").style("stop-color", "#800080"), 
-                    linearGradient;
-                }().attr("id") + ")").attr("filter", "url(#" + function() {
-                    var filter = defs.append("filter").attr("id", "drop-shadow");
-                    return filter.html('\n          \x3c!-- COLORS --\x3e\n          <feFlood flood-color="#551C0B" result="COLOR-outline" />\n          <feFlood flood-color="#551C0B" flood-opacity="0" result="TRANSPARENT" />\n          \x3c!-- COLORS END--\x3e\n\n          \x3c!-- OUTLINE --\x3e\n          <feMorphology operator="dilate" radius="5" in="SourceAlpha" result="OUTLINE_10" />\n          <feComposite operator="in" in="COLOR-outline" in2="OUTLINE_10" result="OUTLINE_20" />\n          \x3c!-- OUTLINE END--\x3e\n\n          \x3c!-- LIGHTING EFFECTS --\x3e\n          <feGaussianBlur stdDeviation="4" in="SourceAlpha" result="LIGHTING-EFFECTS_10" />\n          <feSpecularLighting surfaceScale="7" specularConstant="0.8" specularExponent="7" lighting-color="#white" in="LIGHTING-EFFECTS_10" result="LIGHTING-EFFECTS_20">\n            <fePointLight x="-100" y="-150" z="200" />\n          </feSpecularLighting>\n          <feComposite operator="in" in="LIGHTING-EFFECTS_20" in2="SourceAlpha" result="LIGHTING-EFFECTS_30" />\n          <feComposite operator="arithmetic" k1="0" k2="1" k3="1" k4="0" in="SourceGraphic" in2="LIGHTING-EFFECTS_30" result="LIGHTING-EFFECTS_40" />\n          \x3c!-- LIGHTING EFFECTS END--\x3e\n\n          \x3c!-- COLOR EFFECTS --\x3e\n          <feComponentTransfer in="LIGHTING-EFFECTS_40" result="COLOR-EFFECTS_10">\n            <feFuncR type="identity"></feFuncR>\n            <feFuncG type="identity"></feFuncG>\n            <feFuncB type="identity"></feFuncB>\n            <feFuncA type="identity"></feFuncA>\n          </feComponentTransfer>\n          \x3c!-- COLOR EFFECTS END--\x3e\n\n          <femerge>\n            \x3c!--<feMergeNode in="OUTLINE_20" />--\x3e\n            <feMergeNode in="COLOR-EFFECTS_10" />\n            \x3c!--<feMergeNode in="TRANSPARENT" />--\x3e\n          </femerge>\n      '), 
-                    filter;
-                }().attr("id") + ")"), function() {
-                    var fontSize = 14 + radius / 100, fontSizeBig = 14 + radius / 10, text = svg.append("g");
-                    text.style("font-size", fontSize), text.append("text").attr("transform", "translate(" + (-width / 2 + fontSize) + "," + (-height / 2 + 1.5 * fontSize) + ")").text(txt.title).style("fill", "#fff"), 
-                    text.append("text").attr("transform", "translate(0," + (height / 2 - fontSize) + ")").attr("text-anchor", "middle").text(txt.intro).style("fill", "#fff"), 
-                    text.append("text").attr("id", "ringValue").attr("text-anchor", "middle").style("fill", "#fff").style("font-size", fontSizeBig), 
-                    text.append("text").attr("transform", "translate(0," + 2 * fontSize + ")").attr("text-anchor", "middle").text(txt.botValue).style("fill", "#fff");
-                }();
-            }
-        }, {
-            key: "draw",
-            value: function() {
-                var _props3 = this.props, width = _props3.width, height = _props3.height, svg = this.svg.append("g").attr("transform", "translate(" + width / 2 + "," + height / 2 + ")"), dataset = [ .7 ], pie = d3.pie(), piedata = pie(dataset), arc = d3.arc().innerRadius(100).outerRadius(150).startAngle(Math.PI).endAngle(function(d) {
-                    return Math.PI + 2 * d.value * Math.PI;
-                }), field = svg.selectAll("g").data(piedata).enter().append("g");
-                field.append("path"), field.append("text"), field.select("path").transition().attrTween("d", function(d) {
-                    var i = d3.interpolateNumber(0, d.value);
-                    return function(t) {
-                        return d.value = i(t), arc(d);
-                    };
-                }).duration(2e3).style("fill", "url(#" + gradient().attr("id") + ")");
-            }
-        } ]), HKChart;
-    }();
-    window.HKChart = HKChart, pear.default = HKChart;
-}, function(chunk, pear, __Activision_blizzard__) {
-    "use strict";
-    pear.EP = !0;
-    var _assign = __Activision_blizzard__(43), _assign2 = function(obj) {
-        return obj && obj.EP ? obj : {
-            default: obj
-        };
-    }(_assign);
-    pear.default = _assign2.default || function(target) {
-        for (var i = 1; i < arguments.length; i++) {
-            var source = arguments[i];
-            for (var key in source) Object.prototype.hasOwnProperty.call(source, key) && (target[key] = source[key]);
-        }
-        return target;
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    chunk.pear = {
-        default: __Activision_blizzard__(44),
-        EP: !0
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    __Activision_blizzard__(45), chunk.pear = __Activision_blizzard__(7).Object.assign;
-}, function(chunk, pear, __Activision_blizzard__) {
-    var $export = __Activision_blizzard__(10);
-    $export($export.S + $export.F, "Object", {
-        assign: __Activision_blizzard__(48)
-    });
-}, function(chunk, pear, __Activision_blizzard__) {
-    var aFunction = __Activision_blizzard__(47);
-    chunk.pear = function(fn, that, length) {
-        if (aFunction(fn), void 0 === that) return fn;
-        switch (length) {
-          case 1:
-            return function(a) {
-                return fn.call(that, a);
-            };
-
-          case 2:
-            return function(a, b) {
-                return fn.call(that, a, b);
-            };
-
-          case 3:
-            return function(a, b, c) {
-                return fn.call(that, a, b, c);
-            };
-        }
-        return function() {
-            return fn.apply(that, arguments);
-        };
-    };
-}, function(chunk, pear) {
-    chunk.pear = function(it) {
-        if ("function" != typeof it) throw TypeError(it + " is not a function!");
-        return it;
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    "use strict";
-    var getKeys = __Activision_blizzard__(9), gOPS = __Activision_blizzard__(22), pIE = __Activision_blizzard__(15), toObject = __Activision_blizzard__(33), IObject = __Activision_blizzard__(31), $assign = Object.assign;
-    chunk.pear = !$assign || __Activision_blizzard__(8)(function() {
-        var A = {}, B = {}, S = Symbol(), K = "abcdefghijklmnopqrst";
-        return A[S] = 7, K.split("").forEach(function(k) {
-            B[k] = k;
-        }), 7 != $assign({}, A)[S] || Object.keys($assign({}, B)).join("") != K;
-    }) ? function(target, source) {
-        for (var T = toObject(target), aLen = arguments.length, index = 1, getSymbols = gOPS.f, isEnum = pIE.f; aLen > index; ) for (var key, S = IObject(arguments[index++]), keys = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S), length = keys.length, j = 0; length > j; ) isEnum.call(S, key = keys[j++]) && (T[key] = S[key]);
-        return T;
-    } : $assign;
-}, function(chunk, pear, __Activision_blizzard__) {
-    var toIObject = __Activision_blizzard__(4), toLength = __Activision_blizzard__(50), toAbsoluteIndex = __Activision_blizzard__(51);
-    chunk.pear = function(IS_INCLUDES) {
-        return function($this, el, fromIndex) {
-            var value, O = toIObject($this), length = toLength(O.length), index = toAbsoluteIndex(fromIndex, length);
-            if (IS_INCLUDES && el != el) {
-                for (;length > index; ) if ((value = O[index++]) != value) return !0;
-            } else for (;length > index; index++) if ((IS_INCLUDES || index in O) && O[index] === el) return IS_INCLUDES || index || 0;
-            return !IS_INCLUDES && -1;
-        };
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    var toInteger = __Activision_blizzard__(18), min = Math.min;
-    chunk.pear = function(it) {
-        return it > 0 ? min(toInteger(it), 9007199254740991) : 0;
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    var toInteger = __Activision_blizzard__(18), max = Math.max, min = Math.min;
-    chunk.pear = function(index, length) {
-        return index = toInteger(index), index < 0 ? max(index + length, 0) : min(index, length);
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    "use strict";
-    pear.EP = !0, pear.default = function(instance, Constructor) {
-        if (!(instance instanceof Constructor)) throw new TypeError("Cannot call a class as a function");
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    "use strict";
-    pear.EP = !0;
-    var _defineProperty = __Activision_blizzard__(54), _defineProperty2 = function(obj) {
-        return obj && obj.EP ? obj : {
-            default: obj
-        };
-    }(_defineProperty);
-    pear.default = function() {
-        function defineProperties(target, props) {
-            for (var i = 0; i < props.length; i++) {
-                var descriptor = props[i];
-                descriptor.enumerable = descriptor.enumerable || !1, descriptor.configurable = !0, 
-                "value" in descriptor && (descriptor.writable = !0), (0, _defineProperty2.default)(target, descriptor.key, descriptor);
-            }
-        }
-        return function(Constructor, protoProps, staticProps) {
-            return protoProps && defineProperties(Constructor.prototype, protoProps), staticProps && defineProperties(Constructor, staticProps), 
-            Constructor;
-        };
-    }();
-}, function(chunk, pear, __Activision_blizzard__) {
-    chunk.pear = {
-        default: __Activision_blizzard__(55),
-        EP: !0
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    __Activision_blizzard__(56);
-    var $Object = __Activision_blizzard__(7).Object;
-    chunk.pear = function(it, key, desc) {
-        return $Object.defineProperty(it, key, desc);
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    var $export = __Activision_blizzard__(10);
-    $export($export.S + $export.F * !__Activision_blizzard__(2), "Object", {
-        defineProperty: __Activision_blizzard__(1).f
-    });
-}, function(chunk, pear, __Activision_blizzard__) {
     (function(global, chunk) {
         var __WEBPACK_AMD_DEFINE_RESULT__;
         (function() {
@@ -12887,7 +13006,7 @@
                 return _;
             }.call(pear, __Activision_blizzard__, pear, chunk)) !== undefined && (chunk.pear = __WEBPACK_AMD_DEFINE_RESULT__);
         }).call(this);
-    }).call(pear, __Activision_blizzard__(58), __Activision_blizzard__(59)(chunk));
+    }).call(pear, __Activision_blizzard__(70), __Activision_blizzard__(71)(chunk));
 }, function(chunk, pear) {
     var g;
     g = function() {
@@ -12916,362 +13035,6 @@
     };
 }, function(chunk, pear, __Activision_blizzard__) {
     "use strict";
-    var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__, _typeof2 = __Activision_blizzard__(61), _typeof3 = function(obj) {
-        return obj && obj.EP ? obj : {
-            default: obj
-        };
-    }(_typeof2), _d = __Activision_blizzard__(34), d3 = function(obj) {
-        if (obj && obj.EP) return obj;
-        var newObj = {};
-        if (null != obj) for (var key in obj) Object.prototype.hasOwnProperty.call(obj, key) && (newObj[key] = obj[key]);
-        return newObj.default = obj, newObj;
-    }(_d);
-    !function(global, factory) {
-        "object" === (0, _typeof3.default)(pear) && "undefined" !== typeof chunk ? factory(pear) : (__WEBPACK_AMD_DEFINE_ARRAY__ = [ pear ], 
-        __WEBPACK_AMD_DEFINE_FACTORY__ = factory, void 0 !== (__WEBPACK_AMD_DEFINE_RESULT__ = "function" === typeof __WEBPACK_AMD_DEFINE_FACTORY__ ? __WEBPACK_AMD_DEFINE_FACTORY__.apply(pear, __WEBPACK_AMD_DEFINE_ARRAY__) : __WEBPACK_AMD_DEFINE_FACTORY__) && (chunk.pear = __WEBPACK_AMD_DEFINE_RESULT__));
-    }(0, function(pear) {
-        function RingGradient(options) {
-            if (options.svg instanceof d3.selection) this.container = options.svg; else {
-                if (!(d3.select(options.svg) instanceof d3.selection)) throw new Error("container unavailable !");
-                this.container = d3.select(options.svg);
-            }
-            return this.cx = options.cx ? options.cx : 0, this.cy = options.cy ? options.cy : 0, 
-            this.r = options.radius ? options.radius : 100, this.color = options.color ? options.color : d3.scaleSequential(d3.interpolate("blue", "red")), 
-            this.ringWidth = options.ringWidth ? options.ringWidth : 5, this.dotR = options.dotRadius ? options.dotRadius : 10, 
-            this.dotW = options.dotStrokeWidth ? options.dotStrokeWidth : 3, this.dotFill = options.dotFill ? options.dotFill : "#FFF", 
-            this.textFormat = options.textFormat ? options.textFormat : d3.format(".1%"), this.t = options.t ? options.t : 0, 
-            this.defs = this.container.select("defs").empty() ? this.container.append("defs") : this.container.select("defs"), 
-            this.uuid = "s_" + uuid(), this.init = function() {
-                var linear1 = this.defs.append("linearGradient").attr("x1", "0%").attr("x2", "0%").attr("y1", "0%").attr("y2", "100%").attr("class", this.uuid).attr("id", this.uuid + "_1"), linear2 = this.defs.append("linearGradient").attr("x1", "0%").attr("x2", "0%").attr("y1", "100%").attr("y2", "0%").attr("class", this.uuid).attr("id", this.uuid + "_2");
-                linear1.append("stop").attr("offset", "0%").attr("stop-color", this.color(0)), linear1.append("stop").attr("offset", "100%").attr("class", "ringGradient_linear_1_stop").attr("stop-color", this.color(this.t)), 
-                linear2.append("stop").attr("offset", "0%").attr("stop-color", this.color(.5)), 
-                linear2.append("stop").attr("offset", "100%").attr("class", "ringGradient_linear_2_stop").attr("stop-color", this.color(.5)), 
-                this.g = this.container.append("g").attr("class", "ringGradient_g").attr("transform", "translate(" + this.cx + "," + this.cy + ")"), 
-                this.ring1 = this.g.append("path").attr("class", "ringGradient_ring_1").style("stroke", "url(#" + this.uuid + "_1)").attr("stroke-width", this.ringWidth).attr("fill", "none"), 
-                this.ring2 = this.g.append("path").attr("class", "ringGradient_ring_2").style("stroke", "url(#" + this.uuid + "_2)").attr("stroke-width", this.ringWidth).attr("fill", "none"), 
-                this.dot = this.g.append("circle").attr("class", "ringGradient_dot").attr("r", this.dotR).attr("cx", 0).attr("cy", -this.r).attr("stroke-width", this.dotW).attr("fill", this.dotFill).attr("stroke", this.color(0)), 
-                this.text = this.g.append("text").attr("class", "ringGradient_text").attr("font-size", this.r / 3).attr("font-weight", "bold").attr("dy", ".3em").attr("text-anchor", "middle").text(this.textFormat(this.t)), 
-                this.update(this.t);
-            }, this.update = function(t) {
-                this.t = t;
-                var deltaAngle = 2 * Math.PI * t, dx = Math.sin(deltaAngle) * this.r, dy = Math.cos(deltaAngle) * this.r, selector2 = "#" + this.uuid + "_2", selector1 = "#" + this.uuid + "_1";
-                t >= 1 ? (this.container.select(selector1).select(".ringGradient_linear_1_stop").attr("stop-color", this.color(.5)), 
-                this.container.select(selector2).select(".ringGradient_linear_2_stop").attr("stop-color", this.color(1)), 
-                this.ring2.attr("d", "M0 " + this.r + "A" + this.r + " " + this.r + " 180 0 1 0 " + -this.r), 
-                this.ring1.attr("d", "M0 " + -this.r + "A" + this.r + " " + this.r + " 180 0 1 0 " + this.r), 
-                this.dot.attr("cx", 0).attr("cy", -this.r).attr("stroke", this.color(1)), this.text.text(this.textFormat(t))) : t >= .5 ? (this.container.select(selector1).select(".ringGradient_linear_1_stop").attr("stop-color", this.color(.5)), 
-                this.container.select(selector2).select(".ringGradient_linear_2_stop").attr("stop-color", this.color(t)), 
-                this.ring1.attr("d", "M0 " + -this.r + "A" + this.r + " " + this.r + " 180 0 1 0 " + this.r), 
-                this.ring2.attr("d", "M0 " + this.r + "A" + this.r + " " + this.r + " " + 360 * (t - .5) + " 0 1 " + dx + " " + -dy), 
-                this.dot.attr("cx", dx).attr("cy", -dy).attr("stroke", this.color(t)), this.text.text(this.textFormat(t))) : (this.container.select(selector1).select(".ringGradient_linear_1_stop").attr("stop-color", this.color(t)), 
-                this.container.select(selector2).select(".ringGradient_linear_2_stop").attr("stop-color", this.color(.5)), 
-                this.ring2.attr("d", ""), this.ring1.attr("d", "M0 " + -this.r + "A" + this.r + " " + this.r + " " + 360 * t + " 0 1 " + dx + " " + -dy), 
-                this.dot.attr("cx", dx).attr("cy", -dy).attr("stroke", this.color(t)), this.text.text(this.textFormat(t)));
-            }, this.delete = function() {
-                this.container && (this.defs.selectAll("." + this.uuid).remove(), this.g.remove());
-            }, this.init(), this;
-        }
-        function uuid() {
-            for (var s = [], hexDigits = "0123456789abcdef", i = 0; i < 36; i++) s[i] = hexDigits.substr(Math.floor(16 * Math.random()), 1);
-            return s[14] = "4", s[19] = hexDigits.substr(3 & s[19] | 8, 1), s[8] = s[13] = s[18] = s[23] = "_", 
-            s.join("");
-        }
-        pear.RingGradient = RingGradient;
-    });
-}, function(chunk, pear, __Activision_blizzard__) {
-    "use strict";
-    function _interopRequireDefault(obj) {
-        return obj && obj.EP ? obj : {
-            default: obj
-        };
-    }
-    pear.EP = !0;
-    var _iterator = __Activision_blizzard__(62), _iterator2 = _interopRequireDefault(_iterator), _symbol = __Activision_blizzard__(74), _symbol2 = _interopRequireDefault(_symbol), _typeof = "function" === typeof _symbol2.default && "symbol" === typeof _iterator2.default ? function(obj) {
-        return typeof obj;
-    } : function(obj) {
-        return obj && "function" === typeof _symbol2.default && obj.constructor === _symbol2.default && obj !== _symbol2.default.prototype ? "symbol" : typeof obj;
-    };
-    pear.default = "function" === typeof _symbol2.default && "symbol" === _typeof(_iterator2.default) ? function(obj) {
-        return "undefined" === typeof obj ? "undefined" : _typeof(obj);
-    } : function(obj) {
-        return obj && "function" === typeof _symbol2.default && obj.constructor === _symbol2.default && obj !== _symbol2.default.prototype ? "symbol" : "undefined" === typeof obj ? "undefined" : _typeof(obj);
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    chunk.pear = {
-        default: __Activision_blizzard__(63),
-        EP: !0
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    __Activision_blizzard__(64), __Activision_blizzard__(70), chunk.pear = __Activision_blizzard__(26).f("iterator");
-}, function(chunk, pear, __Activision_blizzard__) {
-    "use strict";
-    var $at = __Activision_blizzard__(65)(!0);
-    __Activision_blizzard__(35)(String, "String", function(iterated) {
-        this._t = String(iterated), this._i = 0;
-    }, function() {
-        var point, O = this._t, index = this._i;
-        return index >= O.length ? {
-            value: void 0,
-            done: !0
-        } : (point = $at(O, index), this._i += point.length, {
-            value: point,
-            done: !1
-        });
-    });
-}, function(chunk, pear, __Activision_blizzard__) {
-    var toInteger = __Activision_blizzard__(18), defined = __Activision_blizzard__(17);
-    chunk.pear = function(TO_STRING) {
-        return function(that, pos) {
-            var a, b, s = String(defined(that)), i = toInteger(pos), l = s.length;
-            return i < 0 || i >= l ? TO_STRING ? "" : void 0 : (a = s.charCodeAt(i), a < 55296 || a > 56319 || i + 1 === l || (b = s.charCodeAt(i + 1)) < 56320 || b > 57343 ? TO_STRING ? s.charAt(i) : a : TO_STRING ? s.slice(i, i + 2) : b - 56320 + (a - 55296 << 10) + 65536);
-        };
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    "use strict";
-    var create = __Activision_blizzard__(37), descriptor = __Activision_blizzard__(13), setToStringTag = __Activision_blizzard__(25), IteratorPrototype = {};
-    __Activision_blizzard__(5)(IteratorPrototype, __Activision_blizzard__(6)("iterator"), function() {
-        return this;
-    }), chunk.pear = function(Constructor, NAME, next) {
-        Constructor.prototype = create(IteratorPrototype, {
-            next: descriptor(1, next)
-        }), setToStringTag(Constructor, NAME + " Iterator");
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    var dP = __Activision_blizzard__(1), anObject = __Activision_blizzard__(11), getKeys = __Activision_blizzard__(9);
-    chunk.pear = __Activision_blizzard__(2) ? Object.defineProperties : function(O, Properties) {
-        anObject(O);
-        for (var P, keys = getKeys(Properties), length = keys.length, i = 0; length > i; ) dP.f(O, P = keys[i++], Properties[P]);
-        return O;
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    var document = __Activision_blizzard__(0).document;
-    chunk.pear = document && document.documentElement;
-}, function(chunk, pear, __Activision_blizzard__) {
-    var has = __Activision_blizzard__(3), toObject = __Activision_blizzard__(33), IE_PROTO = __Activision_blizzard__(19)("IE_PROTO"), ObjectProto = Object.prototype;
-    chunk.pear = Object.getPrototypeOf || function(O) {
-        return O = toObject(O), has(O, IE_PROTO) ? O[IE_PROTO] : "function" == typeof O.constructor && O instanceof O.constructor ? O.constructor.prototype : O instanceof Object ? ObjectProto : null;
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    __Activision_blizzard__(71);
-    for (var global = __Activision_blizzard__(0), hide = __Activision_blizzard__(5), Iterators = __Activision_blizzard__(24), TO_STRING_TAG = __Activision_blizzard__(6)("toStringTag"), DOMIterables = "CSSRuleList,CSSStyleDeclaration,CSSValueList,ClientRectList,DOMRectList,DOMStringList,DOMTokenList,DataTransferItemList,FileList,HTMLAllCollection,HTMLCollection,HTMLFormElement,HTMLSelectElement,MediaList,MimeTypeArray,NamedNodeMap,NodeList,PaintRequestList,Plugin,PluginArray,SVGLengthList,SVGNumberList,SVGPathSegList,SVGPointList,SVGStringList,SVGTransformList,SourceBufferList,StyleSheetList,TextTrackCueList,TextTrackList,TouchList".split(","), i = 0; i < DOMIterables.length; i++) {
-        var NAME = DOMIterables[i], Collection = global[NAME], proto = Collection && Collection.prototype;
-        proto && !proto[TO_STRING_TAG] && hide(proto, TO_STRING_TAG, NAME), Iterators[NAME] = Iterators.Array;
-    }
-}, function(chunk, pear, __Activision_blizzard__) {
-    "use strict";
-    var addToUnscopables = __Activision_blizzard__(72), step = __Activision_blizzard__(73), Iterators = __Activision_blizzard__(24), toIObject = __Activision_blizzard__(4);
-    chunk.pear = __Activision_blizzard__(35)(Array, "Array", function(iterated, kind) {
-        this._t = toIObject(iterated), this._i = 0, this._k = kind;
-    }, function() {
-        var O = this._t, kind = this._k, index = this._i++;
-        return !O || index >= O.length ? (this._t = void 0, step(1)) : "keys" == kind ? step(0, index) : "values" == kind ? step(0, O[index]) : step(0, [ index, O[index] ]);
-    }, "values"), Iterators.Arguments = Iterators.Array, addToUnscopables("keys"), addToUnscopables("values"), 
-    addToUnscopables("entries");
-}, function(chunk, pear) {
-    chunk.pear = function() {};
-}, function(chunk, pear) {
-    chunk.pear = function(done, value) {
-        return {
-            value: value,
-            done: !!done
-        };
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    chunk.pear = {
-        default: __Activision_blizzard__(75),
-        EP: !0
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    __Activision_blizzard__(76), __Activision_blizzard__(83), __Activision_blizzard__(84), __Activision_blizzard__(85), 
-    chunk.pear = __Activision_blizzard__(7).Symbol;
-}, function(chunk, pear, __Activision_blizzard__) {
-    "use strict";
-    var global = __Activision_blizzard__(0), has = __Activision_blizzard__(3), DESCRIPTORS = __Activision_blizzard__(2), $export = __Activision_blizzard__(10), redefine = __Activision_blizzard__(36), META = __Activision_blizzard__(77).KEY, $fails = __Activision_blizzard__(8), shared = __Activision_blizzard__(20), setToStringTag = __Activision_blizzard__(25), uid = __Activision_blizzard__(14), wks = __Activision_blizzard__(6), wksExt = __Activision_blizzard__(26), wksDefine = __Activision_blizzard__(27), keyOf = __Activision_blizzard__(78), enumKeys = __Activision_blizzard__(79), isArray = __Activision_blizzard__(80), anObject = __Activision_blizzard__(11), toIObject = __Activision_blizzard__(4), toPrimitive = __Activision_blizzard__(16), createDesc = __Activision_blizzard__(13), _create = __Activision_blizzard__(37), gOPNExt = __Activision_blizzard__(81), $GOPD = __Activision_blizzard__(82), $DP = __Activision_blizzard__(1), $keys = __Activision_blizzard__(9), gOPD = $GOPD.f, dP = $DP.f, gOPN = gOPNExt.f, $Symbol = global.Symbol, $JSON = global.JSON, _stringify = $JSON && $JSON.stringify, HIDDEN = wks("_hidden"), TO_PRIMITIVE = wks("toPrimitive"), isEnum = {}.propertyIsEnumerable, SymbolRegistry = shared("symbol-registry"), AllSymbols = shared("symbols"), OPSymbols = shared("op-symbols"), ObjectProto = Object.prototype, USE_NATIVE = "function" == typeof $Symbol, QObject = global.QObject, setter = !QObject || !QObject.prototype || !QObject.prototype.findChild, setSymbolDesc = DESCRIPTORS && $fails(function() {
-        return 7 != _create(dP({}, "a", {
-            get: function() {
-                return dP(this, "a", {
-                    value: 7
-                }).a;
-            }
-        })).a;
-    }) ? function(it, key, D) {
-        var protoDesc = gOPD(ObjectProto, key);
-        protoDesc && delete ObjectProto[key], dP(it, key, D), protoDesc && it !== ObjectProto && dP(ObjectProto, key, protoDesc);
-    } : dP, wrap = function(tag) {
-        var sym = AllSymbols[tag] = _create($Symbol.prototype);
-        return sym._k = tag, sym;
-    }, isSymbol = USE_NATIVE && "symbol" == typeof $Symbol.iterator ? function(it) {
-        return "symbol" == typeof it;
-    } : function(it) {
-        return it instanceof $Symbol;
-    }, $defineProperty = function(it, key, D) {
-        return it === ObjectProto && $defineProperty(OPSymbols, key, D), anObject(it), key = toPrimitive(key, !0), 
-        anObject(D), has(AllSymbols, key) ? (D.enumerable ? (has(it, HIDDEN) && it[HIDDEN][key] && (it[HIDDEN][key] = !1), 
-        D = _create(D, {
-            enumerable: createDesc(0, !1)
-        })) : (has(it, HIDDEN) || dP(it, HIDDEN, createDesc(1, {})), it[HIDDEN][key] = !0), 
-        setSymbolDesc(it, key, D)) : dP(it, key, D);
-    }, $defineProperties = function(it, P) {
-        anObject(it);
-        for (var key, keys = enumKeys(P = toIObject(P)), i = 0, l = keys.length; l > i; ) $defineProperty(it, key = keys[i++], P[key]);
-        return it;
-    }, $create = function(it, P) {
-        return void 0 === P ? _create(it) : $defineProperties(_create(it), P);
-    }, $propertyIsEnumerable = function(key) {
-        var E = isEnum.call(this, key = toPrimitive(key, !0));
-        return !(this === ObjectProto && has(AllSymbols, key) && !has(OPSymbols, key)) && (!(E || !has(this, key) || !has(AllSymbols, key) || has(this, HIDDEN) && this[HIDDEN][key]) || E);
-    }, $getOwnPropertyDescriptor = function(it, key) {
-        if (it = toIObject(it), key = toPrimitive(key, !0), it !== ObjectProto || !has(AllSymbols, key) || has(OPSymbols, key)) {
-            var D = gOPD(it, key);
-            return !D || !has(AllSymbols, key) || has(it, HIDDEN) && it[HIDDEN][key] || (D.enumerable = !0), 
-            D;
-        }
-    }, $getOwnPropertyNames = function(it) {
-        for (var key, names = gOPN(toIObject(it)), result = [], i = 0; names.length > i; ) has(AllSymbols, key = names[i++]) || key == HIDDEN || key == META || result.push(key);
-        return result;
-    }, $getOwnPropertySymbols = function(it) {
-        for (var key, IS_OP = it === ObjectProto, names = gOPN(IS_OP ? OPSymbols : toIObject(it)), result = [], i = 0; names.length > i; ) !has(AllSymbols, key = names[i++]) || IS_OP && !has(ObjectProto, key) || result.push(AllSymbols[key]);
-        return result;
-    };
-    USE_NATIVE || ($Symbol = function() {
-        if (this instanceof $Symbol) throw TypeError("Symbol is not a constructor!");
-        var tag = uid(arguments.length > 0 ? arguments[0] : void 0), $set = function(value) {
-            this === ObjectProto && $set.call(OPSymbols, value), has(this, HIDDEN) && has(this[HIDDEN], tag) && (this[HIDDEN][tag] = !1), 
-            setSymbolDesc(this, tag, createDesc(1, value));
-        };
-        return DESCRIPTORS && setter && setSymbolDesc(ObjectProto, tag, {
-            configurable: !0,
-            set: $set
-        }), wrap(tag);
-    }, redefine($Symbol.prototype, "toString", function() {
-        return this._k;
-    }), $GOPD.f = $getOwnPropertyDescriptor, $DP.f = $defineProperty, __Activision_blizzard__(38).f = gOPNExt.f = $getOwnPropertyNames, 
-    __Activision_blizzard__(15).f = $propertyIsEnumerable, __Activision_blizzard__(22).f = $getOwnPropertySymbols, 
-    DESCRIPTORS && !__Activision_blizzard__(23) && redefine(ObjectProto, "propertyIsEnumerable", $propertyIsEnumerable, !0), 
-    wksExt.f = function(name) {
-        return wrap(wks(name));
-    }), $export($export.G + $export.W + $export.F * !USE_NATIVE, {
-        Symbol: $Symbol
-    });
-    for (var es6Symbols = "hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables".split(","), j = 0; es6Symbols.length > j; ) wks(es6Symbols[j++]);
-    for (var wellKnownSymbols = $keys(wks.store), k = 0; wellKnownSymbols.length > k; ) wksDefine(wellKnownSymbols[k++]);
-    $export($export.S + $export.F * !USE_NATIVE, "Symbol", {
-        for: function(key) {
-            return has(SymbolRegistry, key += "") ? SymbolRegistry[key] : SymbolRegistry[key] = $Symbol(key);
-        },
-        keyFor: function(key) {
-            if (isSymbol(key)) return keyOf(SymbolRegistry, key);
-            throw TypeError(key + " is not a symbol!");
-        },
-        useSetter: function() {
-            setter = !0;
-        },
-        useSimple: function() {
-            setter = !1;
-        }
-    }), $export($export.S + $export.F * !USE_NATIVE, "Object", {
-        create: $create,
-        defineProperty: $defineProperty,
-        defineProperties: $defineProperties,
-        getOwnPropertyDescriptor: $getOwnPropertyDescriptor,
-        getOwnPropertyNames: $getOwnPropertyNames,
-        getOwnPropertySymbols: $getOwnPropertySymbols
-    }), $JSON && $export($export.S + $export.F * (!USE_NATIVE || $fails(function() {
-        var S = $Symbol();
-        return "[null]" != _stringify([ S ]) || "{}" != _stringify({
-            a: S
-        }) || "{}" != _stringify(Object(S));
-    })), "JSON", {
-        stringify: function(it) {
-            if (void 0 !== it && !isSymbol(it)) {
-                for (var replacer, $replacer, args = [ it ], i = 1; arguments.length > i; ) args.push(arguments[i++]);
-                return replacer = args[1], "function" == typeof replacer && ($replacer = replacer), 
-                !$replacer && isArray(replacer) || (replacer = function(key, value) {
-                    if ($replacer && (value = $replacer.call(this, key, value)), !isSymbol(value)) return value;
-                }), args[1] = replacer, _stringify.apply($JSON, args);
-            }
-        }
-    }), $Symbol.prototype[TO_PRIMITIVE] || __Activision_blizzard__(5)($Symbol.prototype, TO_PRIMITIVE, $Symbol.prototype.valueOf), 
-    setToStringTag($Symbol, "Symbol"), setToStringTag(Math, "Math", !0), setToStringTag(global.JSON, "JSON", !0);
-}, function(chunk, pear, __Activision_blizzard__) {
-    var META = __Activision_blizzard__(14)("meta"), isObject = __Activision_blizzard__(12), has = __Activision_blizzard__(3), setDesc = __Activision_blizzard__(1).f, id = 0, isExtensible = Object.isExtensible || function() {
-        return !0;
-    }, FREEZE = !__Activision_blizzard__(8)(function() {
-        return isExtensible(Object.preventExtensions({}));
-    }), setMeta = function(it) {
-        setDesc(it, META, {
-            value: {
-                i: "O" + ++id,
-                w: {}
-            }
-        });
-    }, fastKey = function(it, create) {
-        if (!isObject(it)) return "symbol" == typeof it ? it : ("string" == typeof it ? "S" : "P") + it;
-        if (!has(it, META)) {
-            if (!isExtensible(it)) return "F";
-            if (!create) return "E";
-            setMeta(it);
-        }
-        return it[META].i;
-    }, getWeak = function(it, create) {
-        if (!has(it, META)) {
-            if (!isExtensible(it)) return !0;
-            if (!create) return !1;
-            setMeta(it);
-        }
-        return it[META].w;
-    }, onFreeze = function(it) {
-        return FREEZE && meta.NEED && isExtensible(it) && !has(it, META) && setMeta(it), 
-        it;
-    }, meta = chunk.pear = {
-        KEY: META,
-        NEED: !1,
-        fastKey: fastKey,
-        getWeak: getWeak,
-        onFreeze: onFreeze
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    var getKeys = __Activision_blizzard__(9), toIObject = __Activision_blizzard__(4);
-    chunk.pear = function(object, el) {
-        for (var key, O = toIObject(object), keys = getKeys(O), length = keys.length, index = 0; length > index; ) if (O[key = keys[index++]] === el) return key;
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    var getKeys = __Activision_blizzard__(9), gOPS = __Activision_blizzard__(22), pIE = __Activision_blizzard__(15);
-    chunk.pear = function(it) {
-        var result = getKeys(it), getSymbols = gOPS.f;
-        if (getSymbols) for (var key, symbols = getSymbols(it), isEnum = pIE.f, i = 0; symbols.length > i; ) isEnum.call(it, key = symbols[i++]) && result.push(key);
-        return result;
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    var cof = __Activision_blizzard__(32);
-    chunk.pear = Array.isArray || function(arg) {
-        return "Array" == cof(arg);
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    var toIObject = __Activision_blizzard__(4), gOPN = __Activision_blizzard__(38).f, toString = {}.toString, windowNames = "object" == typeof window && window && Object.getOwnPropertyNames ? Object.getOwnPropertyNames(window) : [], getWindowNames = function(it) {
-        try {
-            return gOPN(it);
-        } catch (e) {
-            return windowNames.slice();
-        }
-    };
-    chunk.pear.f = function(it) {
-        return windowNames && "[object Window]" == toString.call(it) ? getWindowNames(it) : gOPN(toIObject(it));
-    };
-}, function(chunk, pear, __Activision_blizzard__) {
-    var pIE = __Activision_blizzard__(15), createDesc = __Activision_blizzard__(13), toIObject = __Activision_blizzard__(4), toPrimitive = __Activision_blizzard__(16), has = __Activision_blizzard__(3), IE8_DOM_DEFINE = __Activision_blizzard__(28), gOPD = Object.getOwnPropertyDescriptor;
-    pear.f = __Activision_blizzard__(2) ? gOPD : function(O, P) {
-        if (O = toIObject(O), P = toPrimitive(P, !0), IE8_DOM_DEFINE) try {
-            return gOPD(O, P);
-        } catch (e) {}
-        if (has(O, P)) return createDesc(!pIE.f.call(O, P), O[P]);
-    };
-}, function(chunk, pear) {}, function(chunk, pear, __Activision_blizzard__) {
-    __Activision_blizzard__(27)("asyncIterator");
-}, function(chunk, pear, __Activision_blizzard__) {
-    __Activision_blizzard__(27)("observable");
-}, function(chunk, pear, __Activision_blizzard__) {
-    "use strict";
     function isCollection(obj) {
         return Array.isArray(obj) || void 0 !== obj.length;
     }
@@ -13289,7 +13052,7 @@
         var value = options[name];
         return void 0 !== value && null !== value || void 0 === defaultValue ? value : defaultValue;
     }
-    var forEach = __Activision_blizzard__(39).forEach, elementUtilsMaker = __Activision_blizzard__(87), listenerHandlerMaker = __Activision_blizzard__(88), idGeneratorMaker = __Activision_blizzard__(89), idHandlerMaker = __Activision_blizzard__(90), reporterMaker = __Activision_blizzard__(91), browserDetector = __Activision_blizzard__(40), batchProcessorMaker = __Activision_blizzard__(92), stateHandler = __Activision_blizzard__(94), objectStrategyMaker = __Activision_blizzard__(95), scrollStrategyMaker = __Activision_blizzard__(96);
+    var forEach = __Activision_blizzard__(28).forEach, elementUtilsMaker = __Activision_blizzard__(73), listenerHandlerMaker = __Activision_blizzard__(74), idGeneratorMaker = __Activision_blizzard__(75), idHandlerMaker = __Activision_blizzard__(76), reporterMaker = __Activision_blizzard__(77), browserDetector = __Activision_blizzard__(29), batchProcessorMaker = __Activision_blizzard__(78), stateHandler = __Activision_blizzard__(80), objectStrategyMaker = __Activision_blizzard__(81), scrollStrategyMaker = __Activision_blizzard__(82);
     chunk.pear = function(options) {
         function listenTo(options, elements, listener) {
             function onResizeCallback(element) {
@@ -13519,7 +13282,7 @@
             size: getSize
         };
     }
-    var utils = __Activision_blizzard__(93);
+    var utils = __Activision_blizzard__(79);
     chunk.pear = function(options) {
         function addFunction(level, fn) {
             !isProcessing && autoProcess && asyncProcess && 0 === batch.size() && processBatchAsync(), 
@@ -13584,7 +13347,7 @@
     };
 }, function(chunk, pear, __Activision_blizzard__) {
     "use strict";
-    var browserDetector = __Activision_blizzard__(40);
+    var browserDetector = __Activision_blizzard__(29);
     chunk.pear = function(options) {
         function addListener(element, listener) {
             function listenerProxy() {
@@ -13658,7 +13421,7 @@
     };
 }, function(chunk, pear, __Activision_blizzard__) {
     "use strict";
-    var forEach = __Activision_blizzard__(39).forEach;
+    var forEach = __Activision_blizzard__(28).forEach;
     chunk.pear = function(options) {
         function addAnimationClass(element) {
             element.className += " " + detectionContainerClass + "_animation_active";

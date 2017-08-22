@@ -8,21 +8,29 @@
             margin: 0;
             padding: 0;
         }
-        #demo{
+        .demo{
             position: fixed;
-            width: 100%;
+            width: 50%;
             height: 100%;
             min-width: 230px;
             min-height: 220px;
         }
+        .demo:nth-child(2){
+            left: 50%;
+        }
     </style>
 </head>
 <body>
-<div id="demo"></div>
+<div class="demo"></div>
+<!--<div class="demo"></div>-->
 <script src="../../../dist/ring.js"></script>
 <script>
-  new HKChart("#demo", {
+  new HKChart(".demo", {
     //具体参数参考README
+    txt:{
+      title: 'PM12.5',
+      intro: '空气质量：中度污染',
+    }
   });
 </script>
 </body>

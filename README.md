@@ -31,16 +31,15 @@ new HKChart("#demo", {
   bgColor: '#0c0e33',
   //背景圆颜色
   bgCircle: '#232c45',
-  //圆环显示百分比
-  percent: 96,
-  //圆环宽度
-  space: 30,
+  //圆环基础最小宽度
+  space: 20,
   //文本设置
   txt: {
     title: 'PM2.5',
     intro: '空气质量：中度污染',
     topValue: '300',
-    botValue: 'AQI:A60',
+    //最大值500 和指针位置挂钩
+    AQI: 60,
   },
 });
 ```

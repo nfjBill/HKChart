@@ -266,7 +266,6 @@
             (0, _classCallCheck3.default)(this, HKChart), this.props = (0, _extends3.default)({
                 bgColor: "#0c0e33",
                 bgCircle: "#232c45",
-                percent: 96,
                 space: 20
             }, obj), this.props.txt = (0, _extends3.default)({
                 title: "PM2.5",
